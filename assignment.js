@@ -20,3 +20,17 @@ function checkName(name){
         return "Bad Name";
     }
 }
+
+
+function deleteInvalids(array){
+    let result = [];
+    if (!Array.isArray(array)) {
+        return "Invalid Array";
+      }
+    for (let i = 0; i < array.length ; i++){
+        if(typeof array[i] === 'number' && !isNaN(array[i])){
+            result.push(array[i]);
+        }
+    }
+    return result;
+}
