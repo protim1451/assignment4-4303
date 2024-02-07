@@ -34,3 +34,27 @@ function deleteInvalids(array){
     }
     return result;
 }
+
+
+function password(obj){
+    
+}
+
+
+function monthlySavings(arr, livingCost){
+    if (!Array.isArray(arr) && typeof livingCost !== 'number') {
+        return "Invalid Input";
+    }
+    let payment = 0; 
+    for(let i=0; i < arr.length ; i++){
+        if(arr[i] >= 3000){
+            arr[i] = arr[i] - 0.2*arr[i]; 
+        }
+        payment = payment + arr[i];
+    }
+    const savings = payment - livingCost;
+    if(savings < 0){
+        return "Earn More";
+    }
+    return savings;
+}
