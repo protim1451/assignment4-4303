@@ -7,3 +7,16 @@ function calculateMoney(ticketSale){
     return earning;
 }
 
+function checkName(name){
+    if(typeof name !== "string"){
+        return "invalid";
+    }
+    let last = name.toLowerCase().slice(-1);
+    if(last === 'a' ||  last === 'y' || last === 'i' || last === 'e' || last === 'o'
+    || last === 'u' || last === 'w'){
+        return "Good Name";
+    }
+    else{
+        return "Bad Name";
+    }
+}
