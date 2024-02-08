@@ -1,3 +1,5 @@
+
+// Problem 1
 function calculateMoney(ticketSale){
     if(ticketSale < 0){
         return "Invalid Number";
@@ -7,6 +9,7 @@ function calculateMoney(ticketSale){
     return earning;
 }
 
+//Problem 2
 function checkName(name){
     if(typeof name !== "string"){
         return "invalid";
@@ -21,7 +24,7 @@ function checkName(name){
     }
 }
 
-
+//Problem 3
 function deleteInvalids(array){
     let result = [];
     if (!Array.isArray(array)) {
@@ -35,14 +38,28 @@ function deleteInvalids(array){
     return result;
 }
 
-
+//problem 4
 function password(obj){
+
+    const name = obj.name;
+    const birthYear = obj.birthYear;
+    const siteName = obj.siteName;
+
+    if(!obj.name || !obj.birthYear || !obj.siteName){
+        return "invalid";
+    }
+    if (obj.birthYear.toString().length !== 4) {
+        return "Invalid";
+      }
     
+    const pass = siteName.charAt(0).toUpperCase() + siteName.slice(1) + '#' + name + '@' + birthYear;
+    return pass;
 }
 
 
+// problem 5
 function monthlySavings(arr, livingCost){
-    if (!Array.isArray(arr) && typeof livingCost !== 'number') {
+    if (!Array.isArray(arr) || typeof livingCost !== 'number') {
         return "Invalid Input";
     }
     let payment = 0; 
